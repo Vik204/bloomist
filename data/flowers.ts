@@ -13,7 +13,7 @@ export const flowers: Flower[] = [
     id: 1,
     name: "Red Roses Bouquet",
     price: "$25",
-    image: "/placeholder.svg?key=w1u9y",
+    image: "/images/red-roses.jpeg",
     description:
       "A stunning arrangement of freshly picked crimson red roses, perfect for expressing love and admiration. Hand-selected stems are arranged with lush green foliage and delicate white filler flowers, creating a classic and timeless bouquet.",
     category: "Bouquets",
@@ -24,7 +24,7 @@ export const flowers: Flower[] = [
     id: 2,
     name: "Sunflower Bundle",
     price: "$18",
-    image: "/placeholder.svg?key=es31r",
+  image: "/images/sunflower-bundle.jpg",
     description:
       "Bring warmth and joy with our cheerful sunflower bundle. These vibrant golden blooms are arranged with complementary greenery and accent flowers to create an uplifting arrangement that brightens any room.",
     category: "Seasonal",
@@ -35,7 +35,7 @@ export const flowers: Flower[] = [
     id: 3,
     name: "Orchid Arrangement",
     price: "$40",
-    image: "/placeholder.svg?key=9oez0",
+  image: "/images/orchid-arrangement.jpg",
     description:
       "Experience exotic elegance with our premium orchid arrangement. Featuring rare and exotic orchid varieties in soft pastels and jewel tones, perfect for special occasions or adding sophistication to any space.",
     category: "Gifts",
@@ -46,7 +46,7 @@ export const flowers: Flower[] = [
     id: 4,
     name: "Tulip Spring Collection",
     price: "$22",
-    image: "/placeholder.svg?key=i0jfi",
+  image: "/images/tulip.jpg",
     description:
       "Welcome spring with our vibrant tulip collection. A mix of stunning tulip colors arranged with fresh greens, perfect for brightening up your home or gifting to someone special.",
     category: "Seasonal",
@@ -57,7 +57,7 @@ export const flowers: Flower[] = [
     id: 5,
     name: "Lavender Bliss",
     price: "$28",
-    image: "/placeholder.svg?key=bkiu4",
+  image: "/images/lavender.jpg",
     description:
       "Calming and beautiful, our lavender arrangement features premium lavender stems combined with complementary dried flowers and greenery. Perfect for relaxation and adding a touch of elegance.",
     category: "Bouquets",
@@ -68,7 +68,7 @@ export const flowers: Flower[] = [
     id: 6,
     name: "Wedding Classic",
     price: "$55",
-    image: "/placeholder.svg?key=k8ka2",
+  image: "/images/wedding.jpg",
     description:
       "Our signature wedding arrangement featuring premium white roses, baby's breath, and eucalyptus. Elegantly arranged for the perfect ceremony or celebration of love and commitment.",
     category: "Gifts",

@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "Page Not Found | Bloomery",
+  title: "Page Not Found | Bloomist",
 }
 
 export default function NotFound() {

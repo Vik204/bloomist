@@ -9,7 +9,7 @@ const geist = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bloomery - Online Florist Portal",
+  title: "Bloomist - Online Florist Portal",
   description:
     "Beautiful flowers delivered fresh. Shop our premium collection of bouquets, gifts, and seasonal arrangements.",
   icons: {

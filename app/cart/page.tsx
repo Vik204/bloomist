@@ -1,7 +1,7 @@
 import CartSummary from "@/components/cart-summary"
 
 export const metadata = {
-  title: "Your Cart | Bloomery",
+  title: "Your Cart | Bloomist",
   description: "Review your selected blooms before checkout.",
 }
 

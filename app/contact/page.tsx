@@ -116,17 +116,17 @@ export default function Contact() {
             <div className="text-center">
               <div className="text-3xl mb-3">📍</div>
               <h3 className="font-semibold mb-2">Address</h3>
-              <p className="text-muted-foreground">123 Flower Street, Garden City, GC 12345</p>
+              <p className="text-muted-foreground">124 Flower Street, Salt lake, Sector V, Kolkata</p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-3">📞</div>
               <h3 className="font-semibold mb-2">Phone</h3>
-              <p className="text-muted-foreground">(555) 123-4567</p>
+              <p className="text-muted-foreground">(+91) 9955565207</p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-3">📧</div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-muted-foreground">hello@bloomery.com</p>
+              <p className="text-muted-foreground">hello@bloomist.com</p>
             </div>
           </div>
         </div>

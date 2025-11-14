@@ -8,7 +8,7 @@ export default function About() {
       {/* Header */}
       <section className="py-12 px-4 bg-primary/5">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">About Bloomery</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-balance">About Bloomist</h1>
           <p className="text-lg text-muted-foreground text-balance">
             Crafting beautiful moments through the art of floristry
           </p>
@@ -19,12 +19,12 @@ export default function About() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="relative h-96 rounded-xl overflow-hidden">
-            <Image src="/florist-arranging-flowers.png" alt="Our story" fill className="object-cover" />
+            <Image src="/images/florist.jpg" alt="Our story" fill className="object-cover" />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-6 text-balance">Our Story</h2>
             <p className="text-foreground/90 mb-4 leading-relaxed">
-              Founded in 2010, Bloomery began as a small neighborhood florist with a passion for creating beautiful
+              Founded in 2010, Bloomist began as a small neighborhood florist with a passion for creating beautiful
               arrangements that brighten people's days.
             </p>
             <p className="text-foreground/90 mb-4 leading-relaxed">

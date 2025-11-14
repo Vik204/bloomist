@@ -9,21 +9,21 @@ export default function Home() {
       id: 1,
       name: "Red Roses Bouquet",
       price: "$25",
-      image: "/red-roses-bouquet.png",
+      image: "/images/red-roses.jpeg",
       category: "Bouquets",
     },
     {
       id: 2,
       name: "Sunflower Bundle",
       price: "$18",
-      image: "/sunflower-bundle.jpg",
+      image: "/images/sunflower-bundle.jpg",
       category: "Seasonal",
     },
     {
       id: 3,
       name: "Orchid Arrangement",
       price: "$40",
-      image: "/orchid-arrangement.jpg",
+      image: "/images/orchid-arrangement.jpg",
       category: "Gifts",
     },
   ]
@@ -65,7 +65,7 @@ export default function Home() {
                 <div className="group bg-card rounded-xl overflow-hidden border border-border hover:shadow-lg transition-all duration-300">
                   <div className="relative h-64 overflow-hidden bg-muted">
                     <Image
-                      src={flower.image || "/placeholder.svg"}
+                      src= {flower.image || '/images/placeholder.jpg'}
                       alt={flower.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
