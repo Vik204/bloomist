@@ -20,28 +20,34 @@ export default function SignIn() {
 
     try {
       // Simple client-side authentication check (demo only)
-      // Check if a user exists in localStorage
-      const raw = typeof window !== 'undefined' ? localStorage.getItem('user') : null
-      if (!raw) {
+      // Look up registered accounts
+      const rawAccounts = typeof window !== 'undefined' ? localStorage.getItem('accounts') : null
+      const accounts = rawAccounts ? JSON.parse(rawAccounts) : null
+      if (!accounts) {
         throw new Error('No account found. Please sign up first.')
       }
 
-      const stored = JSON.parse(raw)
-      console.log('Sign in attempt:', { email })
+      const normEmail = email.trim().toLowerCase()
+      const inputPassword = password
+      const account = accounts[normEmail]
+      if (!account) {
+        throw new Error('No account found. Please sign up first.')
+      }
 
-      if (stored.email !== email || stored.password !== password) {
+      if (account.password !== inputPassword) {
         throw new Error('Invalid email or password')
       }
 
-      // Credentials match — set auth cookie, notify app and redirect
+      // Credentials match — set current session and auth cookie, notify app and redirect
+      const publicUser = { firstName: account.firstName, lastName: account.lastName, email: account.email }
       if (typeof window !== 'undefined') {
-        localStorage.setItem('user', JSON.stringify(stored))
+        localStorage.setItem('currentUser', JSON.stringify(publicUser))
         document.cookie = `auth=1; path=/; max-age=${60 * 60 * 24 * 7}`
-        document.cookie = `user=${encodeURIComponent(email)}; path=/; max-age=${60 * 60 * 24 * 7}`
+        document.cookie = `user=${encodeURIComponent(normEmail)}; path=/; max-age=${60 * 60 * 24 * 7}`
 
         // Notify other components in this tab
         try {
-          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: stored } }))
+          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: publicUser } }))
         } catch (e) {
           // ignore
         }
@@ -53,10 +59,12 @@ export default function SignIn() {
           // ignore
         }
       }
+
       router.push('/')
     } catch (err) {
-      setError('Failed to sign in. Please try again.');
-      console.error(err);
+      const message = err instanceof Error ? err.message : 'Failed to sign in. Please try again.'
+      setError(message)
+      console.error(err)
     } finally {
       setLoading(false);
     }

@@ -51,22 +51,31 @@ export default function SignUp() {
 
       // Simulate successful registration
       // NOTE: Storing password in localStorage is insecure and only for demo/testing.
-      localStorage.setItem(
-        'user',
-        JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          password: formData.password,
-        })
-      );
+      const normEmail = formData.email.trim().toLowerCase()
+      const normFirst = formData.firstName.trim()
+      const normLast = formData.lastName.trim()
+
+      // Persist accounts separately so sign out doesn't remove registration
+      const rawAccounts = typeof window !== 'undefined' ? localStorage.getItem('accounts') : null
+      const accounts = rawAccounts ? JSON.parse(rawAccounts) : {}
+      accounts[normEmail] = {
+        firstName: normFirst,
+        lastName: normLast,
+        email: normEmail,
+        password: formData.password,
+      }
+      localStorage.setItem('accounts', JSON.stringify(accounts))
+
+      // Set current session (public user info only)
+      const publicUser = { firstName: normFirst, lastName: normLast, email: normEmail }
+      localStorage.setItem('currentUser', JSON.stringify(publicUser))
       if (typeof window !== 'undefined') {
         document.cookie = `auth=1; path=/; max-age=${60 * 60 * 24 * 7}`;
         document.cookie = `user=${encodeURIComponent(formData.email)}; path=/; max-age=${60 * 60 * 24 * 7}`;
 
         // Notify other components in this tab that auth changed
         try {
-          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: { firstName: formData.firstName, lastName: formData.lastName, email: formData.email } } }))
+          window.dispatchEvent(new CustomEvent('authChanged', { detail: { user: publicUser } }))
         } catch (e) {
           // ignore
         }

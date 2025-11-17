@@ -10,7 +10,7 @@ export default function AccountPage() {
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem("user");
+      const raw = localStorage.getItem("currentUser") || localStorage.getItem("user");
       if (raw) setUser(JSON.parse(raw));
     } catch (e) {
       setUser(null);

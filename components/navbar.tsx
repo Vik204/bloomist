@@ -26,7 +26,7 @@ export default function Navbar() {
   useEffect(() => {
     try {
       if (typeof window !== 'undefined') {
-        const raw = localStorage.getItem('user')
+        const raw = localStorage.getItem('currentUser') || localStorage.getItem('user')
         if (raw) {
           setUser(JSON.parse(raw))
         } else {
@@ -36,6 +36,7 @@ export default function Navbar() {
     } catch (e) {
       setUser(null)
     }
+
     // Listen for auth changes in this tab
     const handleAuthChanged = (e: Event) => {
       try {
@@ -46,7 +47,7 @@ export default function Navbar() {
           setUser(detail.user)
           return
         }
-        const raw2 = typeof window !== 'undefined' ? localStorage.getItem('user') : null
+        const raw2 = typeof window !== 'undefined' ? (localStorage.getItem('currentUser') || localStorage.getItem('user')) : null
         if (raw2) setUser(JSON.parse(raw2))
         else setUser(null)
       } catch (err) {
