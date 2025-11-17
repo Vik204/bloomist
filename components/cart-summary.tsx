@@ -110,7 +110,9 @@ export default function CartSummary() {
           <span>Total Due</span>
           <span>{currencyFormatter.format(totalPrice)}</span>
         </div>
-        <Button className="mt-6 w-full">Checkout</Button>
+        <Button asChild className="mt-6 w-full">
+          <Link href="/checkout">Checkout</Link>
+        </Button>
         <Button variant="ghost" className="mt-3 w-full" onClick={clearCart}>
           Clear Cart
         </Button>
